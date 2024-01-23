@@ -35,48 +35,63 @@ Sample JSON Data
 {
   "Party": {
     "partyId": "CUST123",
-    "partyTypeId": "PERSON"
-  },
-  "Person": {
-    "partyId": "CUST123",
-    "firstName": "John",
-    "lastName": "Doe",
-    "birthDate": "1990-01-01"
-  },
-  "PartyRole": {
-    "partyId": "CUST123",
-    "roleTypeId": "CUSTOMER"
-  },
-  "ContactMech": [
-    {
+    "partyTypeId": "PERSON",
+    "Person": {
+      "partyId": "CUST123",
+      "firstName": "John",
+      "lastName": "Doe"
+    },
+    "PartyRole": {
+      "partyId": "CUST123",
+      "roleTypeId": "CUSTOMER"
+    },
+    "ContactMech": {
       "contactMechId": "PHONE001",
       "contactMechTypeId": "TELECOM_NUMBER",
-      "infoString": "555-1234"
+      "infoString": "555-1234",
+      "TelecomNumber": {
+        "contactMechId": "PHONE001",
+        "countryCode": "91",
+        "contactNumber": "1234567"
+      }
     },
-    {
-      "contactMechId": "ADDR001",
-      "contactMechTypeId": "POSTAL_ADDRESS",
-      "infoString": "123 Elm Street, Springfield, 12345, USA"
+    "PartyContactMech": {
+      "partyId": "CUST123",
+      "contactMechId": "PHONE001",
+      "fromDate": "2003-01-01 00:00:00.0"
+    },
+    "PartyContactMechPurpose": {
+      "partyId": "CUST123",
+      "contactMechId": "PHONE001",
+      "contactMechPurposeTypeId": "PHONE_SHIPPING",
+      "fromDate": "2003-01-01 00:00:00.0"
     }
-  ],
-  "PostalAddress": {
-    "contactMechId": "ADDR001",
-    "address1": "123 Elm Street",
-    "city": "Springfield",
-    "postalCode": "12345",
-    "countryGeoId": "USA"
   },
-  "ContactMechPurpose": [
-    {
+  "ContactMech": {
+    "contactMechId": "ADDR001",
+    "contactMechTypeId": "POSTAL_ADDRESS",
+    "infoString": "123 Elm Street, Springfield, 12345, USA",
+    "PostalAddress": {
       "contactMechId": "ADDR001",
-      "contactMechPurposeTypeId": "BILLING"
-    },
-    {
-      "contactMechId": "ADDR001",
-      "contactMechPurposeTypeId": "SHIPPING"
+      "address1": "123 Elm Street",
+      "city": "Springfield",
+      "postalCode": "12345",
+      "countryGeoId": "USA"
     }
-  ]
+  },
+  "PartyContactMech": {
+    "partyId": "CUST123",
+    "contactMechId": "ADDR001",
+    "fromDate": "2003-01-01 00:00:00.0"
+  },
+  "PartyContactMechPurpose": {
+    "partyId": "CUST123",
+    "contactMechId": "ADDR001",
+    "contactMechPurposeTypeId": "SHIPPING_LOCATION",
+    "fromDate": "2003-01-01 00:00:00.0"
+  }
 }
+
 ```
 
 
@@ -85,47 +100,60 @@ Sample JSON Data
 {
   "Party": {
     "partyId": "SUPP456",
-    "partyTypeId": "PARTY_GROUP"
-  },
-  "PartyGroup": {
-    "partyId": "SUPP456",
-    "groupName": "XYZ Supplies Inc.",
-    "taxId": "98-7654321"
-  },
-  "PartyRole": {
-    "partyId": "SUPP456",
-    "roleTypeId": "SUPPLIER"
-  },
-  "ContactMech": [
-    {
+    "partyTypeId": "PARTY_GROUP",
+    "PartyGroup": {
+      "partyId": "SUPP456",
+      "groupName": "XYZ Supplies Inc."
+    },
+    "PartyRole": {
+      "partyId": "SUPP456",
+      "roleTypeId": "SUPPLIER"
+    },
+    "ContactMech": {
       "contactMechId": "PHONE002",
       "contactMechTypeId": "TELECOM_NUMBER",
-      "infoString": "555-6789"
+      "TelecomNumber": {
+        "contactMechId": "PHONE002",
+        "countryCode": "91",
+        "contactNumber": "1234567899"
+      }
     },
-    {
-      "contactMechId": "ADDR002",
-      "contactMechTypeId": "POSTAL_ADDRESS",
-      "infoString": "456 Oak Avenue, Metropolis, 54321, USA"
+    "PartyContactMech": {
+      "partyId": "SUPP456",
+      "contactMechId": "PHONE002",
+      "fromDate": "2003-01-01 00:00:00.0"
+    },
+    "PartyContactMechPurpose": {
+      "partyId": "SUPP456",
+      "contactMechId": "PHONE002",
+      "contactMechPurposeTypeId": "PHONE_BILLING",
+      "fromDate": "2003-01-01 00:00:00.0"
     }
-  ],
-  "PostalAddress": {
-    "contactMechId": "ADDR002",
-    "address1": "456 Oak Avenue",
-    "city": "Metropolis",
-    "postalCode": "54321",
-    "countryGeoId": "USA"
   },
-  "ContactMechPurpose": [
-    {
+  "ContactMech": {
+    "contactMechId": "ADDR002",
+    "contactMechTypeId": "POSTAL_ADDRESS",
+    "PostalAddress": {
       "contactMechId": "ADDR002",
-      "contactMechPurposeTypeId": "BILLING"
-    },
-    {
-      "contactMechId": "ADDR002",
-      "contactMechPurposeTypeId": "SHIPPING"
+      "address1": "456 Oak Avenue",
+      "city": "Metropolis",
+      "postalCode": "54321",
+      "countryGeoId": "USA"
     }
-  ]
+  },
+  "PartyContactMech": {
+    "partyId": "SUPP456",
+    "contactMechId": "ADDR002",
+    "fromDate": "2003-01-01 00:00:00.0"
+  },
+  "PartyContactMechPurpose": {
+    "partyId": "SUPP456",
+    "contactMechId": "ADDR002",
+    "contactMechPurposeTypeId": "SHIPPING_LOCATION",
+    "fromDate": "2023-01-01 00:00:00.0"
+  }
 }
+
 ```
 
 
